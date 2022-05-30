@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 
 import formatDate from "../utils/date";
 import { Layout } from "../components/layout";
+import { Head } from "../components/head";
 
 const Head1 = styled.h1`
   margin: 10vh 0;
@@ -35,6 +36,8 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
 
   return (
     <Layout>
+      <Head url="" />
+
       <Head1>投稿一覧</Head1>
       <Posts>
         {allMicrocmsBlogs.nodes.map((node) => (

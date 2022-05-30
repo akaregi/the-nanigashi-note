@@ -4,6 +4,8 @@ import styled from "@emotion/styled";
 
 import { Layout } from "../components/layout";
 import { Prose } from "../components/prose";
+import { Helmet } from "react-helmet-async";
+import { Head } from "../components/head";
 
 type PageContext = {
   next?: {
@@ -40,12 +42,15 @@ export default function BlogPage({
   data,
   pageContext: { next, previous },
 }: PageProps<Queries.BlogPageQuery, PageContext>) {
-  const { microcmsBlogs } = data;
+  const article = data.microcmsBlogs;
+  const url = `/articles/${article?.blogsId}/`;
 
   return (
     <Layout>
-      <Title>{microcmsBlogs?.title}</Title>
-      <Prose html={microcmsBlogs?.content ?? ""} />
+      <Head title={article?.title || ""} url={url} />
+
+      <Title>{article?.title}</Title>
+      <Prose html={article?.content ?? ""} />
       <Pagenation>
         {next && (
           <li>
