@@ -1,13 +1,15 @@
 import type { GatsbyConfig } from "gatsby";
 
+require("dotenv").config();
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `The Nanigashi Note`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://note.azure.icu`,
   },
   plugins: [
-    "gatsby-plugin-postcss",
-    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-react-helmet-async",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-mdx",
     {
@@ -18,10 +20,23 @@ const config: GatsbyConfig = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-microcms",
+      options: {
+        apiKey: process.env.MICROCMS_API_KEY,
+        serviceId: process.env.MICROCMS_SERVICE_ID,
+        apis: [
+          {
+            endpoint: "blogs",
+          },
+          {
+            endpoint: "categories",
+          },
+        ],
+      },
+    },
   ],
-  flags: {
-    GRAPHQL_TYPEGEN: true,
-  },
+  graphqlTypegen: true,
 };
 
 export default config;
