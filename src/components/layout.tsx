@@ -4,6 +4,7 @@ import { css, Global } from "@emotion/react";
 
 import { Navigation } from "./navigation";
 import { Head } from "./head";
+import { Footer } from "./footer";
 
 const Container = styled.div`
   max-width: 768px;
@@ -58,6 +59,7 @@ export function Layout({ children, ...props }: { children: ReactNode }) {
       <Container>
         <Navigation />
         <main {...props}>{children}</main>
+        <Footer />
       </Container>
     </>
   );
