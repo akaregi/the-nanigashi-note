@@ -34,7 +34,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   allMicrocmsBlogs.edges.forEach((edge) => {
     createPage({
       path: `/articles/${edge.node.blogsId}`,
-      component: path.resolve("src/pages/blog.tsx"),
+      component: path.resolve("src/templates/blog.tsx"),
       context: {
         id: edge.node.blogsId,
         next: edge.next,
