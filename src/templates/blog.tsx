@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 
 import { Layout } from "../components/layout";
 import { Prose } from "../components/prose";
-import { Helmet } from "react-helmet-async";
 import { Head } from "../components/head";
 
 type PageContext = {
@@ -19,8 +18,20 @@ type PageContext = {
   };
 };
 
+const Article = styled.article`
+  margin: 10vh 0;
+`;
+
 const Title = styled.h1`
   margin: 10vh 0;
+
+  font-size: 2rem;
+`;
+
+const CategoryTag = styled.p`
+  margin-top: 5vh;
+
+  color: #aaa;
 `;
 
 const Pagenation = styled.ul`
@@ -49,8 +60,12 @@ export default function BlogPage({
     <Layout>
       <Head title={article?.title || ""} url={url} />
 
-      <Title>{article?.title}</Title>
-      <Prose html={article?.content ?? ""} />
+      <Article>
+        <Title>{article?.title}</Title>
+        <Prose html={article?.content ?? ""} />
+        <CategoryTag>{`#${article?.category?.name || "未指定"}`}</CategoryTag>
+      </Article>
+
       <Pagenation>
         {next && (
           <li>
@@ -76,6 +91,9 @@ export const query = graphql`
       title
       content
       publishedAt
+      category {
+        name
+      }
     }
   }
 `;

@@ -3,8 +3,6 @@ import { css, Global } from "@emotion/react";
 
 const globalStyle = css`
   .prose {
-    margin: 10vh 0;
-
     & ul {
       margin: 1rem 3rem;
     }
