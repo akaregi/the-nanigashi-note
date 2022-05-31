@@ -12,7 +12,11 @@ export function Head(props: HelmetProps) {
   const { description, url } = props;
 
   return (
-    <Helmet>
+    <Helmet
+      htmlAttributes={{
+        lang: "ja",
+      }}
+    >
       <title>{title}</title>
       <meta name="description" content={description}></meta>
       <meta property="og:type" content={props.title ? "article" : "website"} />
