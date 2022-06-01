@@ -10,8 +10,6 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-emotion",
     "gatsby-plugin-react-helmet-async",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-mdx",
     {
       resolve: "gatsby-source-filesystem",
       options: {
