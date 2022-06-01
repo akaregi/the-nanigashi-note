@@ -3,3 +3,4 @@ node_modules/
 public
 .env
 src/gatsby-types.d.ts
+yarn-error.log
