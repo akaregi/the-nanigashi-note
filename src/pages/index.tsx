@@ -55,7 +55,7 @@ export default IndexPage;
 
 export const query = graphql`
   query IndexPage {
-    allMicrocmsBlogs(limit: 3, sort: { order: DESC, fields: publishedAt }) {
+    allMicrocmsBlogs(sort: { order: DESC, fields: publishedAt }) {
       nodes {
         blogsId
         title
