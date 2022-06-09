@@ -16,6 +16,12 @@ const globalStyle = css`
       font-size: 1.5rem;
       margin: 1.5rem 0 0.8rem;
     }
+
+    & blockquote {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      border-left: 0.3rem solid #dfdfdf;
+    }
   }
 `;
 
