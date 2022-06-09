@@ -55,6 +55,7 @@ export default function BlogPage({
   pageContext: { next, previous },
 }: PageProps<Queries.BlogPageQuery, PageContext>) {
   const article = data.microcmsBlogs;
+  const meta = data.site?.siteMetadata;
   const url = `/articles/${article?.blogsId}/`;
 
   return (
@@ -83,11 +84,12 @@ export default function BlogPage({
       </Pagenation>
 
       <DiscussionEmbed
-        shortname={process.env.DISQUS_SHORTNAME || ""}
+        shortname={meta?.disqusShortName || ""}
         config={{
-          url: `https://the-nanigashi-note.pages.dev${url}`,
+          url: `${meta?.siteUrl}/${url}`,
           identifier: article?.blogsId || "",
           title: article?.title || "",
+          language: "ja_JP",
         }}
       />
     </Layout>
@@ -103,6 +105,13 @@ export const query = graphql`
       publishedAt
       category {
         name
+      }
+    }
+
+    site {
+      siteMetadata {
+        siteUrl
+        disqusShortName
       }
     }
   }

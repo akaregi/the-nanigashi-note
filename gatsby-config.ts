@@ -5,7 +5,8 @@ require("dotenv").config();
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `The Nanigashi Note`,
-    siteUrl: `https://note.azure.icu`,
+    siteUrl: `https://the-nanigashi-note.pages.dev`,
+    disqusShortName: process.env.DISQUS_SHORTNAME || "",
   },
   plugins: [
     "gatsby-plugin-emotion",
