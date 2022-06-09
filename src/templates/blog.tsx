@@ -57,12 +57,6 @@ export default function BlogPage({
   const article = data.microcmsBlogs;
   const url = `/articles/${article?.blogsId}/`;
 
-  const disqusConfig = {
-    url: `https://the-nanigashi-note.pages.dev${url}`,
-    identifier: article?.blogsId,
-    title: article?.title,
-  };
-
   return (
     <Layout>
       <Head title={article?.title || ""} url={url} />
