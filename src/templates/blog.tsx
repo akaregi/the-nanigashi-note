@@ -88,7 +88,7 @@ export default function BlogPage({
       <DiscussionEmbed
         shortname={meta?.disqusShortName || ""}
         config={{
-          url: postURL,
+          url: url,
           identifier: article?.blogsId || "",
           title: article?.title || "",
           language: "ja_JP",
