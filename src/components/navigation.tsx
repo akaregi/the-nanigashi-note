@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
+import { graphql, Link, StaticQuery } from "gatsby";
 
 const Title = styled.h2`
   margin: 10vh 0;
@@ -20,11 +20,30 @@ const StyledLink = styled(Link)`
 `;
 
 export function Navigation() {
+  const renderNavigation = (data: Queries.NavigationQuery) => {
+    const siteTitle = data.site?.siteMetadata?.title || "";
+
+    return (
+      <nav>
+        <Title>
+          <StyledLink to={`/`}>{siteTitle}</StyledLink>
+        </Title>
+      </nav>
+    );
+  };
+
   return (
-    <nav>
-      <Title>
-        <StyledLink to={`/`}>何某ノート</StyledLink>
-      </Title>
-    </nav>
+    <StaticQuery
+      query={graphql`
+        query Navigation {
+          site {
+            siteMetadata {
+              title
+            }
+          }
+        }
+      `}
+      render={(data: Queries.NavigationQuery) => renderNavigation(data)}
+    />
   );
 }
