@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { Layout } from "../components/layout";
 import { Prose } from "../components/prose";
 import { Head } from "../components/head";
+import { DiscussionEmbed } from "disqus-react";
 
 type PageContext = {
   next?: {
@@ -56,6 +57,12 @@ export default function BlogPage({
   const article = data.microcmsBlogs;
   const url = `/articles/${article?.blogsId}/`;
 
+  const disqusConfig = {
+    url: `https://the-nanigashi-note.pages.dev${url}`,
+    identifier: article?.blogsId,
+    title: article?.title,
+  };
+
   return (
     <Layout>
       <Head title={article?.title || ""} url={url} />
@@ -80,6 +87,15 @@ export default function BlogPage({
           </li>
         )}
       </Pagenation>
+
+      <DiscussionEmbed
+        shortname={process.env.DISQUS_SHORTNAME || ""}
+        config={{
+          url: `https://the-nanigashi-note.pages.dev${url}`,
+          identifier: article?.blogsId || "",
+          title: article?.title || "",
+        }}
+      />
     </Layout>
   );
 }
