@@ -20,10 +20,7 @@ export function Head(props: HelmetProps) {
       <title>{title}</title>
       <meta name="description" content={description}></meta>
       <meta property="og:type" content={props.title ? "article" : "website"} />
-      <meta
-        property="og:url"
-        content={`https://the-nanigashi-note.pages.dev${url}`}
-      />
+      <meta property="og:url" content={url} />
       <meta property="og:site_name" content="何某ノート" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

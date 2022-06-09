@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql, Link, PageProps } from "gatsby";
+import { DiscussionEmbed } from "disqus-react";
 import styled from "@emotion/styled";
 
 import { Layout } from "../components/layout";
 import { Prose } from "../components/prose";
 import { Head } from "../components/head";
-import { DiscussionEmbed } from "disqus-react";
 
 type PageContext = {
   next?: {
@@ -36,6 +36,7 @@ const CategoryTag = styled.p`
 `;
 
 const Pagenation = styled.ul`
+  margin: 10vh 0;
   padding: 0;
 
   & li {
@@ -56,7 +57,7 @@ export default function BlogPage({
 }: PageProps<Queries.BlogPageQuery, PageContext>) {
   const article = data.microcmsBlogs;
   const meta = data.site?.siteMetadata;
-  const url = `/articles/${article?.blogsId}/`;
+  const url = `${meta?.siteUrl}/articles/${article?.blogsId}/`;
 
   return (
     <Layout>
