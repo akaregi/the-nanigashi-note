@@ -5,13 +5,14 @@ import { Helmet } from "react-helmet-async";
 interface HelmetProps {
   title?: string;
   description?: string;
-  url?: string;
+  pageUrl?: string;
 }
 
 export function Head(props: HelmetProps) {
-  const { description, url } = props;
+  const { description, pageUrl } = props;
 
   const renderHeader = (data: Queries.HeadQuery) => {
+    const siteUrl = data.site?.siteMetadata?.siteUrl || "";
     const siteTitle = data.site?.siteMetadata?.title || "";
     const pageTitle = `${props.title || "Home"} - ${siteTitle}`;
 
@@ -27,7 +28,7 @@ export function Head(props: HelmetProps) {
           property="og:type"
           content={props.title ? "article" : "website"}
         />
-        <meta property="og:url" content={url} />
+        <meta property="og:url" content={`${siteUrl}${pageUrl}`} />
         <meta property="og:site_name" content={siteTitle} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
@@ -45,6 +46,7 @@ export function Head(props: HelmetProps) {
           site {
             siteMetadata {
               title
+              siteUrl
             }
           }
         }

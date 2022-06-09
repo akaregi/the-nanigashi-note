@@ -55,13 +55,12 @@ export default function BlogPage({
   pageContext: { next, previous },
 }: PageProps<Queries.BlogPageQuery, PageContext>) {
   const article = data.microcmsBlogs;
-  const meta = data.site?.siteMetadata;
 
   return (
     <Layout>
       <Head
         title={article?.title || ""}
-        url={`${meta?.siteUrl}/articles/${article?.blogsId}`}
+        pageUrl={`/articles/${article?.blogsId}`}
       />
 
       <Article>
@@ -97,12 +96,6 @@ export const query = graphql`
       publishedAt
       category {
         name
-      }
-    }
-
-    site {
-      siteMetadata {
-        siteUrl
       }
     }
   }

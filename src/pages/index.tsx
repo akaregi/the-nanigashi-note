@@ -36,7 +36,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
 
   return (
     <Layout>
-      <Head url="" />
+      <Head pageUrl="" />
 
       <Head1>投稿一覧</Head1>
       <Posts>
