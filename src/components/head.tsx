@@ -10,10 +10,10 @@ interface HelmetProps {
 
 export function Head(props: HelmetProps) {
   const { description, url } = props;
-  
+
   const renderHeader = (data: Queries.HeadQuery) => {
     const siteTitle = data.site?.siteMetadata?.title || "";
-    const pageTitle = `${props.title} - ${siteTitle}`;
+    const pageTitle = `${props.title || "Home"} - ${siteTitle}`;
 
     return (
       <Helmet
