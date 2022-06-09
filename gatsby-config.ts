@@ -6,7 +6,6 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `何某ノート`,
     siteUrl: `https://the-nanigashi-note.pages.dev`,
-    disqusShortName: process.env.DISQUS_SHORTNAME || "",
   },
   plugins: [
     "gatsby-plugin-emotion",

@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, Link, PageProps } from "gatsby";
-import { DiscussionEmbed } from "disqus-react";
 import styled from "@emotion/styled";
 
 import { Layout } from "../components/layout";
@@ -84,16 +83,6 @@ export default function BlogPage({
           </li>
         )}
       </Pagenation>
-
-      <DiscussionEmbed
-        shortname={meta?.disqusShortName || ""}
-        config={{
-          url: url,
-          identifier: article?.blogsId || "",
-          title: article?.title || "",
-          language: "ja_JP",
-        }}
-      />
     </Layout>
   );
 }
@@ -113,7 +102,6 @@ export const query = graphql`
     site {
       siteMetadata {
         siteUrl
-        disqusShortName
       }
     }
   }
