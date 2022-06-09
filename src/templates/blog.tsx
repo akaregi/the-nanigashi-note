@@ -56,12 +56,13 @@ export default function BlogPage({
 }: PageProps<Queries.BlogPageQuery, PageContext>) {
   const article = data.microcmsBlogs;
   const meta = data.site?.siteMetadata;
-  const postURL = `articles/${article?.blogsId}`;
-  const url = `${meta?.siteUrl}/${postURL}`;
 
   return (
     <Layout>
-      <Head title={article?.title || ""} url={url} />
+      <Head
+        title={article?.title || ""}
+        url={`${meta?.siteUrl}/articles/${article?.blogsId}`}
+      />
 
       <Article>
         <Title>{article?.title}</Title>
