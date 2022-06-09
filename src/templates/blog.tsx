@@ -57,7 +57,8 @@ export default function BlogPage({
 }: PageProps<Queries.BlogPageQuery, PageContext>) {
   const article = data.microcmsBlogs;
   const meta = data.site?.siteMetadata;
-  const url = `${meta?.siteUrl}/articles/${article?.blogsId}/`;
+  const postURL = `articles/${article?.blogsId}`;
+  const url = `${meta?.siteUrl}/${postURL}`;
 
   return (
     <Layout>
@@ -87,7 +88,7 @@ export default function BlogPage({
       <DiscussionEmbed
         shortname={meta?.disqusShortName || ""}
         config={{
-          url: `${meta?.siteUrl}/${url}`,
+          url: postURL,
           identifier: article?.blogsId || "",
           title: article?.title || "",
           language: "ja_JP",
