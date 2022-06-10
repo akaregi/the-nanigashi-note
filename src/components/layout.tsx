@@ -8,7 +8,7 @@ import { Meta } from "./meta";
 import { Footer } from "./footer";
 
 const Container = styled.div`
-  max-width: 1024px;
+  max-width: 900px;
   margin: 10vh 10vw;
 
   font-family: "Noto Sans JP", sans-serif;
@@ -23,10 +23,12 @@ const Container = styled.div`
 
   box-sizing: border-box;
 
+  @media screen and (${constants.SCREEN_MD}) {
+    margin: 10vh 5%;
+  }
+
   @media screen and (${constants.SCREEN_SM}) {
     font-size: 16px;
-
-    margin: 10vh 5%;
   }
 `;
 

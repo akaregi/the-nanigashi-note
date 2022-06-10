@@ -27,7 +27,12 @@ export const constants = {
   ACCENT_GRAY: "#dfdfdf",
 
   /**
+   * Screen definition for medium viewport. Example: tablet.
+   */
+  SCREEN_MD: viewport(1024),
+
+  /**
    * Screen definition for small viewport. Example: smartphone.
    */
-  SCREEN_SM: viewport(500),
+  SCREEN_SM: viewport(640),
 };
