@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import formatDate from "../utils/date";
 import { constants } from "../components/constants";
 import { Layout } from "../components/layout";
-import { Head } from "../components/head";
+import { Meta } from "../components/meta";
 
 const Title = styled.h1`
   margin: 10vh 0;
@@ -37,7 +37,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
 
   return (
     <Layout>
-      <Head pageUrl="" />
+      <Meta pageUrl="" />
 
       <Title>投稿一覧</Title>
       <Posts>

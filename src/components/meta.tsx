@@ -8,7 +8,7 @@ interface HelmetProps {
   pageUrl?: string;
 }
 
-export function Head(props: HelmetProps) {
+export function Meta(props: HelmetProps) {
   const { description, pageUrl } = props;
 
   const renderHeader = (data: Queries.HeadQuery) => {

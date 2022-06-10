@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { constants } from "../components/constants";
 import { Layout } from "../components/layout";
 import { Prose } from "../components/prose";
-import { Head } from "../components/head";
+import { Meta } from "../components/meta";
 
 type PageContext = {
   next?: {
@@ -55,7 +55,7 @@ export default function BlogPage({
 
   return (
     <Layout>
-      <Head
+      <Meta
         title={article?.title || ""}
         pageUrl={`/articles/${article?.blogsId}`}
       />

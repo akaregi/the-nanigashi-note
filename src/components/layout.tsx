@@ -4,7 +4,7 @@ import { css, Global } from "@emotion/react";
 
 import { constants } from "./constants";
 import { Navigation } from "./navigation";
-import { Head } from "./head";
+import { Meta } from "./meta";
 import { Footer } from "./footer";
 
 const Container = styled.div`
@@ -63,7 +63,7 @@ export function Layout({ children, ...props }: { children: ReactNode }) {
     <>
       <Global styles={globalStyle} />
 
-      <Head />
+      <Meta />
 
       <Container>
         <Navigation />
