@@ -1,5 +1,6 @@
 import React from "react";
 import { css, Global } from "@emotion/react";
+import { constants } from "./constants";
 
 const globalStyle = css`
   .prose {
@@ -20,7 +21,15 @@ const globalStyle = css`
     & blockquote {
       margin: 1rem 0;
       padding: 0.5rem;
-      border-left: 0.3rem solid #dfdfdf;
+      border-left: 0.3rem solid ${constants.ACCENT_GRAY};
+    }
+  }
+
+  @media screen and (${constants.SCREEN_SM}) {
+    .prose {
+      & ul {
+        margin: 1rem 1.5rem;
+      }
     }
   }
 `;

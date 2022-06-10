@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { graphql, Link, StaticQuery } from "gatsby";
 
+import { constants } from "./constants";
+
 const Title = styled.h2`
   margin: 10vh 0;
 
@@ -10,10 +12,10 @@ const Title = styled.h2`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #161723;
+  color: ${constants.TEXT_FG};
 
   &:hover {
-    color: #626280;
+    color: ${constants.LINK_PRIMARY};
   }
 
   transition: color 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);

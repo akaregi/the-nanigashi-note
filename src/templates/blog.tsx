@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link, PageProps } from "gatsby";
 import styled from "@emotion/styled";
 
+import { constants } from "../components/constants";
 import { Layout } from "../components/layout";
 import { Prose } from "../components/prose";
 import { Head } from "../components/head";
@@ -18,10 +19,6 @@ type PageContext = {
   };
 };
 
-const Article = styled.article`
-  margin: 10vh 0;
-`;
-
 const Title = styled.h1`
   margin: 10vh 0;
 
@@ -31,7 +28,7 @@ const Title = styled.h1`
 const CategoryTag = styled.p`
   margin-top: 5vh;
 
-  color: #aaa;
+  color: ${constants.TEXT_BG};
 `;
 
 const Pagenation = styled.ul`
@@ -44,7 +41,7 @@ const Pagenation = styled.ul`
     & a {
       &::before {
         content: " …… ";
-        color: #161723;
+        color: ${constants.TEXT_FG};
       }
     }
   }
@@ -63,11 +60,11 @@ export default function BlogPage({
         pageUrl={`/articles/${article?.blogsId}`}
       />
 
-      <Article>
+      <article>
         <Title>{article?.title}</Title>
         <Prose html={article?.content ?? ""} />
         <CategoryTag>{`#${article?.category?.name || "未指定"}`}</CategoryTag>
-      </Article>
+      </article>
 
       <Pagenation>
         {next && (

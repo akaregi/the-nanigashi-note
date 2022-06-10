@@ -3,6 +3,7 @@ import { graphql, Link, PageProps } from "gatsby";
 import styled from "@emotion/styled";
 
 import formatDate from "../utils/date";
+import { constants } from "../components/constants";
 import { Layout } from "../components/layout";
 import { Head } from "../components/head";
 
@@ -13,7 +14,7 @@ const Title = styled.h1`
 `;
 
 const Posts = styled.ul`
-  margin: 0;
+  margin: 10vh 0;
   padding: 0;
 `;
 
@@ -24,7 +25,7 @@ const Post = styled.li`
 `;
 
 const PostDate = styled.span`
-  color: #888;
+  color: ${constants.TEXT_BG};
 
   &::after {
     content: " …… ";

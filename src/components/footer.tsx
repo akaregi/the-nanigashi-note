@@ -1,21 +1,19 @@
 import styled from "@emotion/styled";
 import React from "react";
 
-const StyledFooter = styled.div`
-  margin: 10vh 0;
-`;
+import { constants } from "./constants";
 
 const Supplimental = styled.p`
-  color: #aaa;
+  color: ${constants.TEXT_BG};
 `;
 
 export function Footer() {
   return (
-    <StyledFooter>
+    <footer>
       <p>(C) 2022 nanigashi. All rights reserved.</p>
       <Supplimental>
         This site is built with 💖 and 💯 techlonogies.
       </Supplimental>
-    </StyledFooter>
+    </footer>
   );
 }
