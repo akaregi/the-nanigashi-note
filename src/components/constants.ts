@@ -22,6 +22,11 @@ export const constants = {
   LINK_SECONDARY: "#385198",
 
   /**
+   * Accent color of Gray.
+   */
+  ACCENT_GRAY: "#dfdfdf",
+
+  /**
    * Screen definition for small viewport. Example: smartphone.
    */
   SCREEN_SM: viewport(500),
