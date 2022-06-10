@@ -38,11 +38,16 @@ const Pagenation = styled.ul`
   & li {
     list-style: none;
 
-    & a {
-      &::before {
-        content: " …… ";
-        color: ${constants.TEXT_FG};
-      }
+    // Next article
+    &:first-child::before {
+      color: ${constants.TEXT_BG};
+      content: "⏪";
+    }
+
+    // Previous article
+    &:last-child::before {
+      color: ${constants.TEXT_BG};
+      content: "⏩";
     }
   }
 `;
@@ -69,13 +74,11 @@ export default function BlogPage({
       <Pagenation>
         {next && (
           <li>
-            次の記事
             <Link to={`/articles/${next.blogsId}/`}>{next.title}</Link>
           </li>
         )}
         {previous && (
           <li>
-            以前の記事
             <Link to={`/articles/${previous.blogsId}/`}>{previous.title}</Link>
           </li>
         )}
