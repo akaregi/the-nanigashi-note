@@ -6,7 +6,7 @@ import formatDate from "../utils/date";
 import { Layout } from "../components/layout";
 import { Head } from "../components/head";
 
-const Head1 = styled.h1`
+const Title = styled.h1`
   margin: 10vh 0;
 
   font-size: 2rem;
@@ -38,7 +38,7 @@ const IndexPage = ({ data }: PageProps<Queries.IndexPageQuery>) => {
     <Layout>
       <Head pageUrl="" />
 
-      <Head1>投稿一覧</Head1>
+      <Title>投稿一覧</Title>
       <Posts>
         {allMicrocmsBlogs.nodes.map((node) => (
           <Post key={node.blogsId}>
