@@ -15,9 +15,9 @@ type Candidate = {
 
 const candidates: Candidate[] = [
   {
-    // 表示の都合
-    content: "",
-    cite: "",
+    content:
+      "祇園精舎の鐘の声、諸行無常の響きあり。沙羅双樹の花の色、盛者必衰の理を現す。",
+    cite: "平家物語",
   },
   {
     content:
