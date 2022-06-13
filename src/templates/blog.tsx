@@ -40,13 +40,11 @@ const Pagenation = styled.ul`
 
     // Next article
     &:first-child::before {
-      color: ${constants.TEXT_BG};
       content: "⏪";
     }
 
     // Previous article
     &:last-child::before {
-      color: ${constants.TEXT_BG};
       content: "⏩";
     }
   }
