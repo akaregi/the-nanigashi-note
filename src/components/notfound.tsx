@@ -53,7 +53,7 @@ const BlockQuote = styled.blockquote`
   border-left: 0.3rem solid ${constants.ACCENT_GRAY};
 `;
 
-const NotFound = () => {
+const render = () => {
   const quote = takeRandom(candidates);
 
   return (
@@ -62,6 +62,10 @@ const NotFound = () => {
       <cite>― {quote.cite || "典拠不明"}</cite>
     </figure>
   );
+};
+
+const NotFound = () => {
+  return render();
 };
 
 export default NotFound;
