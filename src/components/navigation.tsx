@@ -5,7 +5,7 @@ import { graphql, Link, StaticQuery } from "gatsby";
 import { constants } from "./constants";
 
 const Title = styled.h2`
-  margin: 10vh 0;
+  margin: 5rem 0;
 
   font-size: 1.8rem;
 `;

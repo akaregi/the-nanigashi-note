@@ -20,19 +20,19 @@ type PageContext = {
 };
 
 const Title = styled.h1`
-  margin: 10vh 0;
+  margin: 5rem 0;
 
   font-size: 2rem;
 `;
 
 const CategoryTag = styled.p`
-  margin-top: 5vh;
+  margin-top: 5rem;
 
   color: ${constants.TEXT_BG};
 `;
 
 const Pagenation = styled.ul`
-  margin: 10vh 0;
+  margin: 5rem 0;
   padding: 0;
 
   & li {

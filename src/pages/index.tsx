@@ -8,13 +8,13 @@ import { Layout } from "../components/layout";
 import { Meta } from "../components/meta";
 
 const Title = styled.h1`
-  margin: 10vh 0;
+  margin: 5rem 0;
 
   font-size: 2rem;
 `;
 
 const Posts = styled.ul`
-  margin: 10vh 0;
+  margin: 5rem 0;
   padding: 0;
 `;
 
