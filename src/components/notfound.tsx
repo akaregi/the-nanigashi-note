@@ -59,7 +59,6 @@ const render = () => {
   return (
     <figure>
       <BlockQuote>{quote.content}</BlockQuote>
-      <cite>― {quote.cite || "典拠不明"}</cite>
     </figure>
   );
 };
