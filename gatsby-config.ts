@@ -5,7 +5,7 @@ require("dotenv").config();
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `何某ノート`,
-    siteUrl: `https://the-nanigashi-note.pages.dev`,
+    siteUrl: `https://the-nanigashi-note.vercel.app`,
   },
   plugins: [
     "gatsby-plugin-emotion",
